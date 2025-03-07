@@ -106,8 +106,6 @@ const CreateBankTransferForm = React.memo((props: CreateBankTransferFormProps) =
             setReceiverAccount("")
             setAmount(0)
 
-            console.log("TRANSFER", transfer)
-
             // TODO: make error handling cleaner + less manual
             if (!('non_field_errors' in transfer)) {
                 updateBalances()
