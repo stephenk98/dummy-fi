@@ -77,7 +77,7 @@ const CreateBankTransferForm = React.memo((props: CreateBankTransferFormProps) =
                         ...prev[receiver],
                         bank_accounts: prev[receiver].bank_accounts.map(bank_account => 
                             bank_account.id === receiverAccount
-                                ? {...bank_account, balance: bank_account.balance -= amount}
+                                ? {...bank_account, balance: bank_account.balance += amount}
                                 : bank_account
                         )
                     }
