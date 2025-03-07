@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Customer, ToastNotificationConfig } from '../CustomTypes'
 import { createBankAccount } from '../DummyFIAPI'
 import styled from 'styled-components'
-import { Button } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import MoneyField from './MoneyField'
 import CustomerSelectDropDown from './CustomerSelectDropDown'
 
@@ -10,7 +10,6 @@ const CreateBankAccountFormContainer = styled.form`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 80%;
 `
 
 interface CreateBankAccountFormProps {
@@ -57,6 +56,9 @@ const CreateBankAccountForm = ((props: CreateBankAccountFormProps) => {
 
     return (
         <CreateBankAccountFormContainer>
+            <Typography variant='h4' color='primary' textAlign={'left'}>
+                Add Bank Account
+            </Typography>
             <CustomerSelectDropDown
                 customers={customers}
                 selectedCustomer={selectedCustomer}

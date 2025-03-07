@@ -12,7 +12,6 @@ const CreateBankTransferFormContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 90%;
 `
 
 const BankTransferSidesContainer = styled.div`
@@ -121,6 +120,9 @@ const CreateBankTransferForm = React.memo((props: CreateBankTransferFormProps) =
 
     return (
         <CreateBankTransferFormContainer>
+            <Typography variant='h4' color='primary' textAlign={'left'}>
+                Transfer Funds
+            </Typography>
             <Typography variant='h6' color='primary'>
                 Send
             </Typography>

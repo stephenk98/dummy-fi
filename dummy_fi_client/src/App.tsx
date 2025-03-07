@@ -6,6 +6,22 @@ import ToastNotification from './components/ToastNotification';
 import CreateCustomerForm from './components/CreateCustomerForm';
 import CreateBankAccountForm from './components/CreateBankAccountForm';
 import CreateBankTransferForm from './components/CreateBankTransferForm'
+import styled from 'styled-components'
+import { Divider } from '@mui/material';
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 90%;
+`
+
+const TopContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  grid-gap: 2rem;
+  width: 100%;
+`
 
 function App() {
   const [customers, setCustomers] = useState<{ [id: string]: Customer }>({})
@@ -30,26 +46,32 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ToastNotification
-          open={toastConfig.open}
-          resetToast={resetToast}
-          message={toastConfig.message}
-          severity={toastConfig.severity}
-        />
-        {/* <CreateCustomerForm
-          setCustomers={setCustomers}
-          setToastConfig={setToastConfig}
-        /> */}
-        {/* <CreateBankAccountForm
-          customers={customers}
-          setCustomers={setCustomers}
-          setToastConfig={setToastConfig}
-        /> */}
-        <CreateBankTransferForm
-          customers={customers}
-          setCustomers={setCustomers}
-          setToastConfig={setToastConfig}
-        />
+        <AppContainer>
+          <ToastNotification
+            open={toastConfig.open}
+            resetToast={resetToast}
+            message={toastConfig.message}
+            severity={toastConfig.severity}
+          />
+          <TopContainer>
+          <CreateCustomerForm
+            setCustomers={setCustomers}
+            setToastConfig={setToastConfig}
+          />
+          <Divider orientation='vertical'  />
+          <CreateBankAccountForm
+            customers={customers}
+            setCustomers={setCustomers}
+            setToastConfig={setToastConfig}
+          />
+          </TopContainer>
+          <Divider />
+          <CreateBankTransferForm
+            customers={customers}
+            setCustomers={setCustomers}
+            setToastConfig={setToastConfig}
+          />
+        </AppContainer>
       </header>
     </div>
   );

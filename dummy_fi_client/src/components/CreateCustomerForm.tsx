@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Customer, CustomerCreateData, ToastNotificationConfig } from '../CustomTypes'
 import { createCustomer } from '../DummyFIAPI'
 import styled from 'styled-components'
-import { TextField, Button } from '@mui/material'
+import { TextField, Button, Typography } from '@mui/material'
 
 const CreateCustomerFormContainer = styled.form`
     display: flex;
@@ -60,6 +60,9 @@ const CreateCustomerForm = ((props: CreateCustomerFormProps) => {
 
     return (
         <CreateCustomerFormContainer>
+            <Typography variant='h4' color='primary' textAlign={'left'}>
+                Add Customer
+            </Typography>
             <TextField
                 label='First Name'
                 value={customerData.first_name}
